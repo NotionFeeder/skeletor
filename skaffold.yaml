@@ -1,0 +1,14 @@
+apiVersion: skaffold/v4beta4
+kind: Config
+metadata:
+  name: skeletor
+build:
+  artifacts:
+    - image: skeletor
+      runtimeType: go
+      docker:
+        dockerfile: build/container/dev/Dockerfile
+manifests:
+  kustomize:
+    paths:
+      - deploy/kubernetes
